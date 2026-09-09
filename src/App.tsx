@@ -40,7 +40,7 @@ function App() {
   return (
     <BrowserRouter>
       <ScrollToTop />
-      <div className="min-h-screen bg-white text-slate-900 font-sans selection:bg-[#cfa353] selection:text-slate-950 flex flex-col justify-between">
+      <div className="min-h-screen bg-[#f7f4ed] text-slate-900 font-sans selection:bg-[#cfa353] selection:text-slate-950 flex flex-col justify-between">
         {/* Fixed Responsive Navbar */}
         <Navbar />
 

@@ -6,7 +6,7 @@ export const GalleryGrid: React.FC = () => {
   const photos = galleryPhotos.slice(0, 8);
 
   return (
-    <section id="gallery" className="bg-white pb-24 pt-8 text-slate-800 overflow-hidden">
+    <section id="gallery" className="bg-[#f7f4ed] pb-24 pt-8 text-slate-800 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center space-y-3 max-w-xl mx-auto mb-12">
           <span className="text-[#cfa353] text-xs font-semibold tracking-[0.25em] uppercase block">

@@ -5,7 +5,7 @@ import { packages } from '../data/resort';
 
 export const PackagesSection: React.FC = () => {
   return (
-    <section id="packages" className="bg-white py-20">
+    <section id="packages" className="bg-[#f3efe6] py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-12">
           <div>

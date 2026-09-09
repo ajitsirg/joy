@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 export const WeddingsCorporate: React.FC = () => {
   return (
-    <section id="weddings" className="bg-white py-16 sm:py-20">
+    <section id="weddings" className="bg-[#f7f4ed] py-16 sm:py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-5">
           <Link
