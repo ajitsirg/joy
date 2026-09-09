@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { NavLink, Link, useLocation } from 'react-router-dom';
-import { Menu, X, Palmtree, User, UserPlus, ChevronDown } from 'lucide-react';
+import { Menu, X, User, UserPlus, ChevronDown } from 'lucide-react';
 
 type ChildLink = { name: string; path: string; note?: string };
 type NavItem = { name: string; path?: string; children?: ChildLink[] };
@@ -91,8 +91,12 @@ export const Navbar: React.FC = () => {
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="h-[72px] flex items-center justify-between gap-6" ref={navRef}>
             <Link to="/" className="flex items-center gap-3 group shrink-0">
-              <div className="w-11 h-11 rounded-full border border-[#cfa353]/80 bg-[#0d3423] flex items-center justify-center shadow-md group-hover:border-[#e6bf73] group-hover:scale-[1.03] transition-all">
-                <Palmtree className="w-5 h-5 text-[#cfa353]" />
+              <div className="w-11 h-11 rounded-full overflow-hidden border border-[#cfa353]/80 bg-white flex items-center justify-center shadow-md group-hover:border-[#e6bf73] group-hover:scale-[1.03] transition-all">
+                <img
+                  src="/brand/joy-hospitality-logo.png"
+                  alt="Joy Hospitality and Real Estate Group"
+                  className="w-full h-full object-contain p-0.5"
+                />
               </div>
               <div className="flex flex-col">
                 <span className="font-serif text-[1.45rem] leading-none text-white tracking-[0.04em] group-hover:text-[#e6bf73] transition-colors">
@@ -224,8 +228,12 @@ export const Navbar: React.FC = () => {
       >
         <div className="flex items-center justify-between px-5 py-5 border-b border-white/8">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-full border border-[#cfa353] bg-[#0d3423] flex items-center justify-center">
-              <Palmtree className="w-4 h-4 text-[#cfa353]" />
+            <div className="w-10 h-10 rounded-full overflow-hidden border border-[#cfa353] bg-white flex items-center justify-center">
+              <img
+                src="/brand/joy-hospitality-logo.png"
+                alt="Joy Hospitality and Real Estate Group"
+                className="w-full h-full object-contain p-0.5"
+              />
             </div>
             <div className="flex flex-col">
               <span className="font-serif text-xl leading-none text-white tracking-[0.04em]">Joy Club</span>

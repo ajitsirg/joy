@@ -3,25 +3,25 @@ import { heroVideos, madeFilm, media } from '../data/resort';
 
 export const FilmStrip: React.FC = () => {
   return (
-    <section id="film" className="bg-[#0a291c] py-16 sm:py-20">
+    <section id="film" className="bg-white py-16 sm:py-20 border-y border-[#0a291c]/8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4 mb-8">
+        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4 mb-9">
           <div>
-            <span className="text-[#cfa353] text-[11px] font-semibold tracking-[0.28em] uppercase">
+            <span className="text-[#b88e40] text-[11px] font-semibold tracking-[0.28em] uppercase">
               Made for Joy Club
             </span>
-            <h2 className="mt-2 text-4xl sm:text-5xl font-serif font-medium text-white leading-[1.05]">
-              A 50-second
-              <span className="italic text-[#cfa353]"> resort film.</span>
+            <h2 className="mt-2 text-4xl sm:text-5xl font-serif font-medium text-[#0a291c] leading-[1.05]">
+              See the joy
+              <span className="italic text-[#b88e40]"> in motion.</span>
             </h2>
           </div>
-          <p className="max-w-sm text-white/70 text-sm">
-            Built from their own photos and clips — cottages, games, the lake, then a booking card.
+          <p className="max-w-sm text-slate-600 text-sm leading-relaxed">
+            A short look at the lake, cottages, games and celebrations waiting at the resort.
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-5">
-          <div className="lg:col-span-7 aspect-video rounded-[1.6rem] overflow-hidden bg-black shadow-2xl">
+          <div className="lg:col-span-7 aspect-video rounded-[1.6rem] overflow-hidden bg-black shadow-xl">
             <video
               src={madeFilm}
               poster={media.lakeAerial}

@@ -11,6 +11,11 @@
 }
 
 @layer base {
+  body {
+    background: #ffffff;
+    color: #0a291c;
+  }
+
   html {
     font-family: var(--font-sans);
   }
