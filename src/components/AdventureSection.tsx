@@ -1,94 +1,67 @@
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { games } from '../data/resort';
+
+const featured = games.filter((game) =>
+  ['Zip Line', 'ATV Ride', 'Rope Course', 'Boating', 'Archery'].includes(game.name)
+);
 
 export const AdventureSection: React.FC = () => {
-  const activities = [
-    {
-      title: 'Zipline',
-      image: 'https://images.unsplash.com/photo-1533587851505-d119e13fa0d7?auto=format&fit=crop&w=600&q=80',
-    },
-    {
-      title: 'ATV Ride',
-      image: 'https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?auto=format&fit=crop&w=600&q=80',
-    },
-    {
-      title: 'Rope Course',
-      image: 'https://images.unsplash.com/photo-1510312305653-8ed496efae75?auto=format&fit=crop&w=600&q=80',
-    },
-    {
-      title: 'Kayaking',
-      image: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=600&q=80',
-    },
-    {
-      title: 'Camping',
-      image: 'https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?auto=format&fit=crop&w=600&q=80',
-    },
-  ];
-
   return (
-    <section id="adventure" className="bg-[#0d3423] py-20 text-white overflow-hidden">
+    <section id="adventure" className="bg-[#f3efe6] py-20 text-slate-800 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        {/* Section Header */}
-        <div className="text-center space-y-4 max-w-2xl mx-auto mb-14">
-          <div className="flex items-center justify-center gap-2">
-            <div className="w-2.5 h-2.5 bg-[#cfa353] rotate-45" />
+        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-12">
+          <div className="max-w-xl space-y-3">
+            <span className="text-[#b88e40] text-[11px] font-semibold tracking-[0.28em] uppercase">
+              Games on the grounds
+            </span>
+            <h2 className="text-4xl sm:text-6xl font-serif font-medium text-[#0a291c] leading-[1.05]">
+              Seventeen ways
+              <span className="italic text-[#b88e40]"> to play.</span>
+            </h2>
           </div>
-          <h2 className="text-3xl sm:text-5xl font-serif font-medium text-white">
-            Adventure Experiences
-          </h2>
-          <p className="text-gray-300 text-sm sm:text-base font-light">
-            From treetop ziplines to lakeside camps — adrenaline for every age group,
-            guided by certified instructors.
+          <p className="max-w-sm text-slate-600 text-sm leading-relaxed">
+            Zip line across the river, ATVs, rope course, paintball, zorbing, camel carts
+            and a toy train — priced as listed on the live resort.
           </p>
         </div>
 
-        {/* Activity Cards Grid: 2 cols on mobile, 3 cols on md, 6 cols on lg */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-5">
-          {activities.map((item, idx) => (
-            <div
-              key={idx}
-              className="relative h-72 sm:h-80 rounded-2xl overflow-hidden group shadow-lg cursor-pointer transform transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl"
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4 items-end">
+          {featured.map((item, index) => (
+            <article
+              key={item.name}
+              className={`relative rounded-[1.4rem] overflow-hidden group ${
+                index % 2 === 0 ? 'h-80 sm:h-[26rem]' : 'h-64 sm:h-80'
+              }`}
             >
-              {/* Image */}
               <img
                 src={item.image}
-                alt={item.title}
-                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                alt={item.name}
+                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
               />
-              {/* Dark Gradient Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent group-hover:from-black/90 transition-colors" />
-
-              {/* Title */}
-              <div className="absolute bottom-4 left-4 right-4">
-                <h3 className="text-lg font-serif font-bold text-white group-hover:text-[#cfa353] transition-colors">
-                  {item.title}
-                </h3>
+              <div className="absolute inset-0 bg-gradient-to-t from-[#1a140c]/60 via-transparent to-transparent" />
+              <div className="absolute bottom-4 left-4 right-3">
+                <p className="text-[10px] tracking-[0.2em] uppercase text-[#e6bf73]">{item.price}</p>
+                <h3 className="font-serif text-xl sm:text-2xl text-white">{item.name}</h3>
               </div>
-            </div>
+            </article>
           ))}
 
-          {/* 6th Card: Gold Highlight "20+ Activities" */}
-          <div className="h-72 sm:h-80 rounded-2xl bg-[#cfa353] p-6 text-[#0d3423] flex flex-col justify-between items-center text-center shadow-xl transform transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
-            <div className="my-auto space-y-2">
-              <span className="text-5xl sm:text-6xl font-serif font-bold leading-none block">
-                20+
-              </span>
-              <span className="text-lg sm:text-xl font-serif font-semibold block">
-                Activities
+          <Link
+            to="/adventure"
+            className="h-64 sm:h-80 rounded-[1.4rem] bg-[#cfa353] text-[#1a140c] p-6 flex flex-col justify-between hover:-translate-y-1 transition-transform"
+          >
+            <span className="font-serif text-5xl leading-none">17</span>
+            <div>
+              <p className="font-serif text-xl">Games listed</p>
+              <span className="mt-3 inline-flex items-center gap-2 text-[11px] font-semibold tracking-[0.16em] uppercase">
+                See prices
+                <ArrowRight className="w-3.5 h-3.5" />
               </span>
             </div>
-
-            <a
-              href="#all-activities"
-              className="w-full py-3 rounded-full bg-[#0d3423] hover:bg-[#071a12] text-white font-bold text-xs tracking-wider uppercase transition-colors flex items-center justify-center gap-2 shadow-md"
-            >
-              <span>EXPLORE ALL</span>
-              <ArrowRight className="w-3.5 h-3.5 text-[#cfa353]" />
-            </a>
-          </div>
+          </Link>
         </div>
-
       </div>
     </section>
   );

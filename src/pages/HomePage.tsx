@@ -8,6 +8,8 @@ import { VillasSection } from '../components/VillasSection';
 import { WeddingsCorporate } from '../components/WeddingsCorporate';
 import { Testimonials } from '../components/Testimonials';
 import { GalleryGrid } from '../components/GalleryGrid';
+import { PackagesSection } from '../components/PackagesSection';
+import { FilmStrip } from '../components/FilmStrip';
 
 export const HomePage: React.FC = () => {
   return (
@@ -17,6 +19,8 @@ export const HomePage: React.FC = () => {
 
       {/* 2. Overlapping Floating Feature Cards */}
       <FloatingCards />
+
+      <FilmStrip />
 
       {/* 3. About Joy Club Section */}
       <AboutSection />
@@ -29,6 +33,8 @@ export const HomePage: React.FC = () => {
 
       {/* 6. Luxury Villas & Rooms Section */}
       <VillasSection />
+
+      <PackagesSection />
 
       {/* 7. Weddings & Corporate Banners */}
       <WeddingsCorporate />

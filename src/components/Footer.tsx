@@ -28,8 +28,9 @@ export const Footer: React.FC = () => {
             </Link>
             
             <p className="text-gray-300 text-xs sm:text-sm font-light leading-relaxed max-w-sm">
-              Relax, Refresh, Reconnect. A luxury adventure and wellness retreat in the Aravalli Hills.
+              Joy Adventure Resort, Sanskriti Village, Garjeda — lake cottages, farmhouses and 17 games on the Diggi Malpura Jaipur Highway.
             </p>
+            <p className="text-[#cfa353] text-xs">+91 800 0928 080 · info@joyadventureresort.com</p>
           </div>
 
           {/* Column 2: Quick Links */}
@@ -44,7 +45,7 @@ export const Footer: React.FC = () => {
               <Link to="/weddings" className="hover:text-[#cfa353] transition-colors">Weddings</Link>
               <Link to="/gallery" className="hover:text-[#cfa353] transition-colors">Gallery</Link>
               <Link to="/adventure" className="hover:text-[#cfa353] transition-colors">Adventure</Link>
-              <Link to="/investment" className="hover:text-[#cfa353] transition-colors">Investment Plan</Link>
+              <Link to="/packages" className="hover:text-[#cfa353] transition-colors">Packages</Link>
               <Link to="/contact" className="hover:text-[#cfa353] transition-colors">Contact Us</Link>
             </div>
           </div>
@@ -76,7 +77,7 @@ export const Footer: React.FC = () => {
 
         {/* Bottom Bar */}
         <div className="pt-6 flex flex-col md:flex-row items-center justify-between text-xs text-gray-400 gap-4">
-          <p>© {new Date().getFullYear()} Joy Club Adventure Resort. All Rights Reserved.</p>
+          <p>© {new Date().getFullYear()} Joy Adventure Resort. All Rights Reserved.</p>
           
           <div className="flex items-center space-x-5 text-gray-300">
             <a href="#facebook" className="hover:text-[#cfa353] transition-colors"><FaFacebookF className="w-3.5 h-3.5" /></a>

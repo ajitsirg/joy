@@ -1,0 +1,6 @@
+file 'c:/Users/lenovo/Desktop/JoyWebsite/JoyClub/public/media/_opening-invitation/clip-01.mp4'
+file 'c:/Users/lenovo/Desktop/JoyWebsite/JoyClub/public/media/_opening-invitation/clip-02.mp4'
+file 'c:/Users/lenovo/Desktop/JoyWebsite/JoyClub/public/media/_opening-invitation/clip-03.mp4'
+file 'c:/Users/lenovo/Desktop/JoyWebsite/JoyClub/public/media/_opening-invitation/clip-04.mp4'
+file 'c:/Users/lenovo/Desktop/JoyWebsite/JoyClub/public/media/_opening-invitation/clip-05.mp4'
+file 'c:/Users/lenovo/Desktop/JoyWebsite/JoyClub/public/media/_opening-invitation/clip-06.mp4'

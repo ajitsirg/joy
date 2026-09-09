@@ -1,4 +1,5 @@
 import React from 'react';
+import { galleryPhotos, media, resortFilm } from '../data/resort';
 
 
 export const GalleryPage: React.FC = () => {
@@ -30,6 +31,24 @@ export const GalleryPage: React.FC = () => {
         {/* Main Outer Container */}
         <div className="bg-white rounded-[2.5rem] p-4 sm:p-8 lg:p-10 shadow-2xl border border-amber-900/10 space-y-8">
           
+          <div className="aspect-video rounded-[1.6rem] overflow-hidden bg-black">
+            <iframe
+              title="Joy Adventure Resort film"
+              src={`${resortFilm}?rel=0`}
+              className="w-full h-full"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          </div>
+
+          <div className="columns-2 md:columns-3 lg:columns-4 gap-3">
+            {galleryPhotos.map((photo) => (
+              <div key={photo.image} className="mb-3 break-inside-avoid rounded-2xl overflow-hidden">
+                <img src={photo.image} alt={photo.title} className="w-full h-auto object-cover" />
+              </div>
+            ))}
+          </div>
+
           {/* Header Banner */}
           <div className="flex flex-col md:flex-row items-center justify-between gap-6 border-b border-gray-200 pb-6 text-center md:text-left">
             <div className="flex items-center gap-4">
@@ -63,7 +82,7 @@ export const GalleryPage: React.FC = () => {
               {/* Styled Master Map Illustration Graphic */}
               <div className="relative rounded-2xl overflow-hidden shadow-2xl border-2 border-emerald-800/30">
                 <img
-                  src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=1200&q=80"
+                  src="/media/rooms/lake-aerial.jpg"
                   alt="Master Site Layout Map"
                   className="w-full h-[420px] object-cover filter brightness-90"
                 />
@@ -120,7 +139,7 @@ export const GalleryPage: React.FC = () => {
 
             <div className="h-56 sm:h-64 rounded-3xl overflow-hidden shadow-2xl border border-amber-900/10 relative group">
               <img
-                src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1200&q=80"
+                src={media.lakeAerial}
                 alt="Lakeside Swiss Cottages Strip"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform"
               />

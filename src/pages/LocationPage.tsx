@@ -135,7 +135,7 @@ export const LocationPage: React.FC = () => {
                 <QrCode className="w-12 h-12 text-[#cfa353] shrink-0" />
                 <div>
                   <span className="text-[9px] text-[#cfa353] font-bold uppercase tracking-wider block">VISIT US ONLINE</span>
-                  <span className="text-xs font-mono font-bold text-white block">www.joyadventureresort.in</span>
+                  <span className="text-xs font-mono font-bold text-white block">www.joyadventureresort.com</span>
                 </div>
               </div>
 
@@ -162,7 +162,7 @@ export const LocationPage: React.FC = () => {
               <MapPin className="w-6 h-6 text-[#cfa353] shrink-0" />
               <div>
                 <span className="text-[9px] font-bold text-[#cfa353] uppercase block">RESORT ADDRESS</span>
-                <p className="text-xs text-gray-200">Garjeda Village, Diggi Malpura Highway, Jaipur (Raj.)</p>
+                <p className="text-xs text-gray-200">Sanskriti Village, Garjeda Village, LNT Road, Diggi Malpura Jaipur Highway</p>
               </div>
             </div>
 
@@ -170,7 +170,7 @@ export const LocationPage: React.FC = () => {
               <Mail className="w-6 h-6 text-[#cfa353] shrink-0" />
               <div>
                 <span className="text-[9px] font-bold text-[#cfa353] uppercase block">EMAIL US</span>
-                <p className="text-xs text-gray-200">info@joyadventureresort.in</p>
+                <p className="text-xs text-gray-200">info@joyadventureresort.com</p>
               </div>
             </div>
 
@@ -178,7 +178,7 @@ export const LocationPage: React.FC = () => {
               <Building className="w-6 h-6 text-[#cfa353] shrink-0" />
               <div>
                 <span className="text-[9px] font-bold text-[#cfa353] uppercase block">REGISTERED OFFICE</span>
-                <p className="text-xs text-gray-200">134-135, Parshwanath Colony, Nirman Nagar, Jaipur (Raj.)</p>
+                <p className="text-xs text-gray-200">Jaipur Earth Developers Pvt. Ltd., S B-1, Nityanand Nagar, Vaishali Nagar, Jaipur</p>
               </div>
             </div>
           </div>

@@ -8,21 +8,21 @@ export const WeddingsPage: React.FC = () => {
       tag: 'OUTDOOR MANDAP',
       capacity: 'Up to 1500 Guests',
       description: 'Sprawling green lawn surrounded by palm trees, fairy lights, and fairytale Aravalli backdrop for grand weddings.',
-      image: 'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80',
+      image: '/media/packages/wedding.jpg',
     },
     {
       title: 'Lakeside Pool Deck & Lawn',
       tag: 'COCKTAIL & MEHENDI',
       capacity: 'Up to 500 Guests',
       description: 'Picturesque poolside venue ideal for haldi, mehendi, sunset cocktail parties, and musical sangeet nights.',
-      image: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=800&q=80',
+      image: '/media/rooms/lake-cottage.jpg',
     },
     {
       title: 'Grand Banquet & Conference Hall',
       tag: 'INDOOR RECEPTION',
       capacity: 'Up to 400 Guests',
       description: 'Climate-controlled luxury banquet hall with wooden paneling, crystal lighting, and state-of-the-art AV systems.',
-      image: 'https://images.unsplash.com/photo-1517502884422-41eaead166d4?auto=format&fit=crop&w=800&q=80',
+      image: '/media/packages/corporate.jpg',
     },
   ];
 
@@ -41,7 +41,7 @@ export const WeddingsPage: React.FC = () => {
       {/* Hero Banner */}
       <section className="relative h-80 sm:h-96 flex items-center justify-center text-center text-white overflow-hidden">
         <img
-          src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=2000&q=80"
+          src="/media/events/holi-1.jpg"
           alt="Destination Weddings Banner"
           className="absolute inset-0 w-full h-full object-cover filter brightness-[0.35]"
         />

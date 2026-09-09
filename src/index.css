@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 @theme {
-  --font-serif: 'Playfair Display', Georgia, serif;
-  --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Outfit', system-ui, sans-serif;
   --color-resort-green: #0d3423;
   --color-resort-dark: #0a291c;
   --color-resort-cream: #fbf9f4;
@@ -18,6 +18,19 @@
   h1, h2, h3, h4, .font-serif {
     font-family: var(--font-serif);
   }
+}
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(22px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-rise {
+  animation: rise 0.9s ease-out both;
+}
+
+.animate-rise-delay {
+  animation: rise 0.9s ease-out 0.18s both;
 }
 
 /* Custom scrollbar styling */

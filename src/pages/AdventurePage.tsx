@@ -1,59 +1,17 @@
 import React from 'react';
 import { ShieldCheck, Compass, Zap, Activity } from 'lucide-react';
+import { games } from '../data/resort';
 
 export const AdventurePage: React.FC = () => {
-  const mainActivities = [
-    {
-      title: 'ZIP LINE THRILLS',
-      image: 'https://images.unsplash.com/photo-1533587851505-d119e13fa0d7?auto=format&fit=crop&w=600&q=80',
-    },
-    {
-      title: 'FUN GAMES & ACTIVITIES',
-      image: 'https://images.unsplash.com/photo-1511882150382-421056c89033?auto=format&fit=crop&w=600&q=80',
-    },
-    {
-      title: 'ROPE COURSE',
-      image: 'https://images.unsplash.com/photo-1510312305653-8ed496efae75?auto=format&fit=crop&w=600&q=80',
-    },
-    {
-      title: 'LAKE ADVENTURE',
-      image: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=600&q=80',
-    },
-    {
-      title: 'PAINTBALL ACTION',
-      image: 'https://images.unsplash.com/photo-1511882150382-421056c89033?auto=format&fit=crop&w=600&q=80',
-    },
-    {
-      title: 'HIGH ROPE CHALLENGE',
-      image: 'https://images.unsplash.com/photo-1510312305653-8ed496efae75?auto=format&fit=crop&w=600&q=80',
-    },
-    {
-      title: 'ATV ADVENTURE',
-      image: 'https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?auto=format&fit=crop&w=600&q=80',
-    },
-    {
-      title: 'ROCK CLIMBING',
-      image: 'https://images.unsplash.com/photo-1522163182402-834f871fd851?auto=format&fit=crop&w=600&q=80',
-    },
-    {
-      title: 'SHOOTING RANGE',
-      image: 'https://images.unsplash.com/photo-1533587851505-d119e13fa0d7?auto=format&fit=crop&w=600&q=80',
-    },
-  ];
+  const mainActivities = games.slice(0, 9).map((game) => ({
+    title: `${game.name.toUpperCase()} · ${game.price}`,
+    image: game.image,
+  }));
 
-  const directoryActivities = [
-    { name: 'TREKKING', icon: '⛰️' },
-    { name: 'BIRD WATCHING', icon: '🦅' },
-    { name: 'CYCLING', icon: '🚴' },
-    { name: 'KAYAKING', icon: '🚣' },
-    { name: 'CAMPFIRE NIGHTS', icon: '🔥' },
-    { name: 'ARCHERY', icon: '🏹' },
-    { name: 'WALL CLIMBING', icon: '🧗' },
-    { name: 'OBSTACLE COURSE', icon: '🏃' },
-    { name: 'MANDI SWING', icon: '🎪' },
-    { name: 'NATURE WALKS', icon: '🌿' },
-    { name: '& MANY MORE...', icon: '✨' },
-  ];
+  const directoryActivities = games.map((game) => ({
+    name: `${game.name} · ${game.price}`,
+    icon: '✦',
+  }));
 
   return (
     <div className="pt-24 pb-16 bg-[#071d13] min-h-screen text-white selection:bg-[#cfa353]">
@@ -109,8 +67,8 @@ export const AdventurePage: React.FC = () => {
 
               {/* 20+ Adventures Highlight Box */}
               <div className="bg-[#cfa353] text-slate-950 p-4 rounded-2xl text-center space-y-0.5 shadow-lg">
-                <span className="text-3xl sm:text-4xl font-serif font-extrabold block">20+</span>
-                <span className="text-xs font-bold uppercase tracking-wider block">ADVENTURES ENDLESS MEMORIES!</span>
+                <span className="text-3xl sm:text-4xl font-serif font-extrabold block">17</span>
+                <span className="text-xs font-bold uppercase tracking-wider block">GAMES LISTED ON THE RESORT</span>
               </div>
             </div>
 
@@ -120,7 +78,7 @@ export const AdventurePage: React.FC = () => {
               {/* 20+ Adventures Central Banner */}
               <div className="bg-[#cfa353] text-slate-950 p-4 rounded-2xl flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left shadow-xl">
                 <div>
-                  <h3 className="text-2xl sm:text-3xl font-serif font-extrabold">20+ ADVENTURES</h3>
+                  <h3 className="text-2xl sm:text-3xl font-serif font-extrabold">17 GAMES</h3>
                   <span className="text-xs font-bold tracking-wider uppercase block">SOMETHING FOR EVERY EXPLORER!</span>
                 </div>
                 <div className="px-4 py-1.5 rounded-full bg-[#0a291c] text-[#cfa353] font-bold text-[10px] uppercase tracking-widest">

@@ -1,107 +1,81 @@
 import React from 'react';
-import { Check, Palmtree } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { specialties } from '../data/resort';
+
+const facts = [
+  { value: '17', label: 'Games on site' },
+  { value: '5', label: 'Ways to stay' },
+  { value: '1', label: 'Natural lake' },
+];
 
 export const AboutSection: React.FC = () => {
-  const highlights = [
-    '20+ Adventure Activities',
-    'World Class Amenities',
-    'Eco Friendly Resort',
-    'Award Winning Hospitality',
-  ];
-
   return (
-    <section className="bg-[#fbf9f4] pt-20 pb-24 text-slate-800 overflow-hidden">
+    <section className="bg-[#f7f4ed] pt-24 pb-24 text-slate-800 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
-          
-          {/* Left Column Content */}
-          <div className="lg:col-span-6 space-y-6">
-            
-            {/* Tag */}
-            <div className="flex items-center gap-2">
-              <div className="w-2.5 h-2.5 bg-[#cfa353] rotate-45" />
-              <span className="text-[#cfa353] text-xs font-semibold tracking-[0.25em] uppercase">
-                ABOUT JOY CLUB
-              </span>
-            </div>
-
-            {/* Heading */}
-            <h2 className="text-3xl sm:text-5xl font-serif font-medium text-[#0a291c] leading-tight">
-              Nature. Wellness. Adventure.
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-end">
+          <div className="lg:col-span-5 space-y-6">
+            <span className="text-[#b88e40] text-[11px] font-semibold tracking-[0.28em] uppercase">
+              Joy Adventure Resort, Jaipur
+            </span>
+            <h2 className="font-serif text-4xl sm:text-6xl font-medium text-[#0a291c] leading-[1.05]">
+              A lake, a farm,
+              <br />
+              and a play field
+              <br />
+              <span className="italic text-[#b88e40]">outside the city.</span>
             </h2>
-
-            {/* Description */}
-            <p className="text-gray-600 text-sm sm:text-base leading-relaxed font-sans font-light">
-              Nestled in the lap of the Aravalli Hills, Joy Club Adventure Resort is spread
-              across lush greenery and serene landscapes, offering the perfect escape from
-              the city. Our mission is to deliver exceptional value to both our guests and
-              investors through quality, innovation and sustainable hospitality.
+            <p className="text-slate-600 text-sm sm:text-base leading-relaxed max-w-md">
+              Started as a holiday resort in the Pink City — air-conditioned cottages,
+              Swiss tents, theme farmhouses, and a kitchen that cooks from its own farms.
+              Built to entertain and to let people rest.
             </p>
-
-            {/* Checklist Badges (2x2 grid) */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
-              {highlights.map((item, idx) => (
-                <div key={idx} className="flex items-center gap-3">
-                  <div className="w-6 h-6 rounded-full bg-[#f6ebd6] text-[#cfa353] flex items-center justify-center shrink-0">
-                    <Check className="w-3.5 h-3.5 stroke-[3]" />
-                  </div>
-                  <span className="text-xs sm:text-sm font-semibold text-slate-800">
-                    {item}
-                  </span>
-                </div>
+            <ul className="space-y-2 text-sm text-slate-600">
+              {specialties.slice(0, 4).map((item) => (
+                <li key={item}>{item}</li>
               ))}
-            </div>
+            </ul>
+            <Link
+              to="/about"
+              className="inline-flex items-center gap-2 text-sm font-semibold tracking-[0.14em] uppercase text-[#0a291c] hover:text-[#b88e40] transition-colors"
+            >
+              Our story
+              <ArrowRight className="w-4 h-4" />
+            </Link>
           </div>
 
-          {/* Right Column Image Grid (2-Column Layout matching screenshot 2) */}
-          <div className="lg:col-span-6 relative">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 items-center">
-              
-              {/* Left Photo: Tall Portrait Aerial View */}
-              <div className="relative">
-                <div className="rounded-3xl overflow-hidden shadow-2xl border-4 border-white h-[360px] sm:h-[420px]">
-                  <img
-                    src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=800&q=80"
-                    alt="Aerial View of Joy Club Resort Lake"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-
-                {/* Floating Circular Emblem Badge attached to right edge */}
-                <div className="absolute top-1/2 -right-6 transform -translate-y-1/2 z-20 hidden sm:block">
-                  <div className="w-20 h-20 rounded-full border-4 border-white bg-[#0d3423] text-white flex flex-col items-center justify-center shadow-2xl">
-                    <Palmtree className="w-8 h-8 text-[#cfa353]" />
-                    <span className="text-[7px] font-bold tracking-widest text-[#cfa353] uppercase mt-0.5">
-                      JOY CLUB
-                    </span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Right Photos: 2 Stacked Landscape Cards */}
-              <div className="space-y-4">
-                {/* Top Image: Luxury Bedroom */}
-                <div className="rounded-2xl overflow-hidden shadow-xl border-4 border-white h-[175px] sm:h-[200px]">
-                  <img
-                    src="https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=800&q=80"
-                    alt="Interior of a premium resort room"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-
-                {/* Bottom Image: Lantern Gazebo */}
-                <div className="rounded-2xl overflow-hidden shadow-xl border-4 border-white h-[175px] sm:h-[200px]">
-                  <img
-                    src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=800&q=80"
-                    alt="Garden gazebo lit with lanterns at night"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              </div>
-
+          <div className="lg:col-span-7 relative h-[420px] sm:h-[520px]">
+            <div className="absolute left-0 top-8 w-[58%] h-[78%] rounded-[2rem] overflow-hidden shadow-xl border-4 border-white rotate-[-2deg]">
+              <img
+                src="/media/rooms/lake-aerial.jpg"
+                alt="Aerial of Joy Adventure Resort"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="absolute right-0 top-0 w-[46%] h-[46%] rounded-[1.6rem] overflow-hidden shadow-xl border-4 border-white rotate-[3deg]">
+              <img
+                src="/media/rooms/garden-facing.jpg"
+                alt="Garden facing Swiss cottage"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="absolute right-4 bottom-0 w-[48%] h-[42%] rounded-[1.6rem] overflow-hidden shadow-xl border-4 border-white rotate-[1deg]">
+              <img
+                src="/media/resort/resort-01.jpg"
+                alt="Joy Adventure Resort grounds"
+                className="w-full h-full object-cover"
+              />
             </div>
           </div>
+        </div>
 
+        <div className="mt-16 grid grid-cols-1 sm:grid-cols-3 border-y border-[#cfa353]/25 divide-y sm:divide-y-0 sm:divide-x divide-[#cfa353]/25">
+          {facts.map((fact) => (
+            <div key={fact.label} className="py-7 sm:py-8 px-2 text-center">
+              <p className="font-serif text-4xl sm:text-5xl text-[#0a291c]">{fact.value}</p>
+              <p className="mt-1 text-[11px] tracking-[0.22em] uppercase text-[#b88e40]">{fact.label}</p>
+            </div>
+          ))}
         </div>
       </div>
     </section>

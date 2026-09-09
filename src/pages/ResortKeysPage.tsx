@@ -1,5 +1,6 @@
 import React from 'react';
 import { Palmtree, Leaf, Heart, Sparkles, Building, Waves, Trees, Sun } from 'lucide-react';
+import { rooms, resort } from '../data/resort';
 
 export const ResortKeysPage: React.FC = () => {
   const resortKeysList = [
@@ -116,7 +117,7 @@ export const ResortKeysPage: React.FC = () => {
             {/* 2. Middle Column: Nature & Luxury Sunset Gazebo Feature Card */}
             <div className="lg:col-span-4 relative rounded-3xl overflow-hidden shadow-xl border border-amber-900/10 min-h-[500px] flex flex-col justify-between p-6 group">
               <img
-                src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=800&q=80"
+                src="/media/resort/resort-01.jpg"
                 alt="A Perfect Blend of Nature & Luxury"
                 className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 filter brightness-[0.75]"
               />
@@ -144,7 +145,7 @@ export const ResortKeysPage: React.FC = () => {
               
               <div className="relative h-44 rounded-2xl overflow-hidden shadow-md group">
                 <img
-                  src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=600&q=80"
+                  src="/media/rooms/lake-aerial.jpg"
                   alt="Lush Green Landscapes"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform"
                 />
@@ -155,7 +156,7 @@ export const ResortKeysPage: React.FC = () => {
 
               <div className="relative h-44 rounded-2xl overflow-hidden shadow-md group">
                 <img
-                  src="https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=600&q=80"
+                  src="/media/gallery/g02.jpg"
                   alt="Serene Lakes & Sunsets"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform"
                 />
@@ -166,7 +167,7 @@ export const ResortKeysPage: React.FC = () => {
 
               <div className="relative h-44 rounded-2xl overflow-hidden shadow-md group">
                 <img
-                  src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=600&q=80"
+                  src="/media/rooms/garden-facing.jpg"
                   alt="Luxury Redefined"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform"
                 />
@@ -177,6 +178,37 @@ export const ResortKeysPage: React.FC = () => {
 
             </div>
 
+          </div>
+
+          <div className="space-y-4">
+            <div>
+              <span className="text-[#cfa353] text-xs font-semibold tracking-widest uppercase">Stay list from the resort</span>
+              <h3 className="text-2xl sm:text-3xl font-serif font-bold text-[#0a291c] mt-1">
+                Swiss cottages, tents and farmhouses
+              </h3>
+              <p className="text-xs text-gray-500 mt-1">
+                Check-in {resort.checkIn} · Check-out {resort.checkOut} · {resort.kidsPolicy}
+              </p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {rooms.map((room) => (
+                <article key={room.name} className="bg-[#fbf9f4] rounded-2xl overflow-hidden border border-amber-900/10">
+                  <img src={room.image} alt={room.name} className="w-full h-40 object-cover" />
+                  <div className="p-4 space-y-2">
+                    <div className="flex items-start justify-between gap-3">
+                      <h4 className="font-serif font-bold text-slate-900">{room.name}</h4>
+                      <span className="text-[#b88e40] font-serif font-bold shrink-0">{room.price}</span>
+                    </div>
+                    <p className="text-[11px] text-gray-500">{room.note} · {room.unit}</p>
+                    <ul className="text-[11px] text-gray-600 space-y-1">
+                      {room.includes.slice(0, 3).map((line) => (
+                        <li key={line}>{line}</li>
+                      ))}
+                    </ul>
+                  </div>
+                </article>
+              ))}
+            </div>
           </div>
 
           {/* Bottom Dark Green Section: WORLD CLASS AMENITIES */}

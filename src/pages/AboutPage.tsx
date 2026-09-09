@@ -38,23 +38,23 @@ export const AboutPage: React.FC = () => {
   const photoCollage = [
     {
       title: 'Serene Resort Lake Boating',
-      image: 'https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=600&q=80',
+      image: '/media/gallery/g01.jpg',
     },
     {
       title: 'Traditional Wooden Villa',
-      image: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=600&q=80',
+      image: '/media/rooms/lake-cottage.jpg',
     },
     {
       title: 'Lush Orchard Lawns',
-      image: 'https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=600&q=80',
+      image: '/media/rooms/lake-aerial.jpg',
     },
     {
       title: 'Luxury Bedroom Interior',
-      image: 'https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=600&q=80',
+      image: '/media/rooms/farmhouse.jpg',
     },
     {
       title: 'Sunset Lake Gazebo',
-      image: 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=600&q=80',
+      image: '/media/resort/resort-02.jpg',
     },
   ];
 
@@ -71,7 +71,7 @@ export const AboutPage: React.FC = () => {
             {/* 1. Left Card: Sunset Resort Pathway & Brand Tagline */}
             <div className="lg:col-span-4 relative h-[480px] sm:h-[540px] rounded-3xl overflow-hidden shadow-xl group border border-amber-900/10 flex flex-col justify-between p-6">
               <img
-                src="https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=800&q=80"
+                src="/media/gallery/g06.jpg"
                 alt="Joy Hospitality Pathway"
                 className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 filter brightness-[0.7]"
               />
@@ -132,11 +132,10 @@ export const AboutPage: React.FC = () => {
                     <Leaf className="w-4 h-4" />
                   </div>
                   <p className="text-xs sm:text-sm text-gray-700 leading-relaxed font-light">
-                    Our resort is built with a vision to create a world-class destination where{' '}
-                    <strong className="text-[#cfa353] font-semibold">luxury</strong>,{' '}
-                    <strong className="text-[#cfa353] font-semibold">nature</strong>,{' '}
-                    <strong className="text-[#cfa353] font-semibold">wellness</strong>, and{' '}
-                    <strong className="text-[#cfa353] font-semibold">unforgettable experiences</strong> come together.
+                    Joy Adventure Resort opened in Jaipur as a holiday stay that can both{' '}
+                    <strong className="text-[#cfa353] font-semibold">entertain</strong> and{' '}
+                    <strong className="text-[#cfa353] font-semibold">revitalize</strong> — lake cottages,
+                    Swiss tents, and theme farmhouses with modern rooms.
                   </p>
                 </div>
 
@@ -145,8 +144,8 @@ export const AboutPage: React.FC = () => {
                     <Palmtree className="w-4 h-4" />
                   </div>
                   <p className="text-xs sm:text-sm text-gray-700 leading-relaxed font-light">
-                    Designed to offer premium hospitality, adventure, destination weddings, and wellness retreats, we are committed to delivering{' '}
-                    <strong className="text-[#cfa353] font-semibold">exceptional value</strong> to both our guests and investors.
+                    Guests eat traditional Rajasthani and continental food, with vegetables from the resort’s own farms. The grounds host{' '}
+                    <strong className="text-[#cfa353] font-semibold">weddings, birthdays, corporate days</strong> and New Year nights.
                   </p>
                 </div>
 
@@ -155,10 +154,8 @@ export const AboutPage: React.FC = () => {
                     <TrendingUp className="w-4 h-4" />
                   </div>
                   <p className="text-xs sm:text-sm text-gray-700 leading-relaxed font-light">
-                    With a strong focus on{' '}
-                    <strong className="text-[#cfa353] font-semibold">quality, innovation</strong>, and{' '}
-                    <strong className="text-[#cfa353] font-semibold">sustainable growth</strong>, our resort aims to become one of{' '}
-                    <strong className="text-[#cfa353] font-semibold">Rajasthan's most iconic hospitality destinations</strong>.
+                    The site is eco-friendly and quiet, with lake views and sunsets. Many guests end a trip by{' '}
+                    <strong className="text-[#cfa353] font-semibold">planting a tree</strong> in the resort garden.
                   </p>
                 </div>
 

@@ -71,8 +71,8 @@ export const ContactPage: React.FC = () => {
                 </div>
                 <div>
                   <span className="text-[9px] font-bold text-[#cfa353] uppercase block">RESORT ADDRESS</span>
-                  <h4 className="font-serif font-bold text-slate-900 text-sm">Garjeda Village</h4>
-                  <p className="text-xs text-gray-600 font-light">Diggi Malpura Highway, Jaipur (Raj.), India</p>
+                  <h4 className="font-serif font-bold text-slate-900 text-sm">Sanskriti Village</h4>
+                  <p className="text-xs text-gray-600 font-light">Garjeda Village, LNT Road, Diggi Malpura Jaipur Highway, Jaipur, Rajasthan</p>
                 </div>
               </div>
 
@@ -82,8 +82,8 @@ export const ContactPage: React.FC = () => {
                 </div>
                 <div>
                   <span className="text-[9px] font-bold text-[#cfa353] uppercase block">REGISTERED CORPORATE OFFICE</span>
-                  <h4 className="font-serif font-bold text-slate-900 text-sm">134-135, Parshwanath Colony</h4>
-                  <p className="text-xs text-gray-600 font-light">Nirman Nagar, Jaipur (Raj.), India</p>
+                  <h4 className="font-serif font-bold text-slate-900 text-sm">Jaipur Earth Developers Pvt. Ltd.</h4>
+                  <p className="text-xs text-gray-600 font-light">S B-1, Nityanand Nagar, Gandhi Path, Vaishali Nagar, Jaipur — 302021</p>
                 </div>
               </div>
 
@@ -92,7 +92,7 @@ export const ContactPage: React.FC = () => {
                   <Phone className="w-5 h-5 text-[#cfa353]" />
                   <div>
                     <span className="text-[9px] font-bold text-gray-400 uppercase">CALL US</span>
-                    <span className="text-xs font-bold text-slate-900 block">+91 8000928080</span>
+                    <span className="text-xs font-bold text-slate-900 block">+91 800 0928 080</span>
                   </div>
                 </div>
 
@@ -100,7 +100,7 @@ export const ContactPage: React.FC = () => {
                   <Mail className="w-5 h-5 text-[#cfa353]" />
                   <div>
                     <span className="text-[9px] font-bold text-gray-400 uppercase">EMAIL US</span>
-                    <span className="text-xs font-bold text-slate-900 block">info@joyadventureresort.in</span>
+                    <span className="text-xs font-bold text-slate-900 block">info@joyadventureresort.com</span>
                   </div>
                 </div>
               </div>
@@ -133,10 +133,10 @@ export const ContactPage: React.FC = () => {
                 <div>
                   <label className="text-xs font-bold text-slate-700 block mb-1">Inquiry Type</label>
                   <select className="w-full px-4 py-3 rounded-xl bg-white border border-gray-200 text-xs focus:outline-none focus:border-[#cfa353]">
-                    <option>Luxury Room / Villa Stay</option>
-                    <option>Adventure Park Pass</option>
-                    <option>Naturopathy & Wellness Retreat</option>
-                    <option>Destination Wedding / Event</option>
+                    <option>Swiss Cottage / Farmhouse Stay</option>
+                    <option>Day Outing Package</option>
+                    <option>Night Outing / Adventure Tents</option>
+                    <option>Theme Wedding / Birthday / Corporate</option>
                     <option>Investor Membership Plan</option>
                   </select>
                 </div>

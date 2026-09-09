@@ -19,6 +19,7 @@ import { LegalFormationPage } from './pages/LegalFormationPage';
 import { LocationPage } from './pages/LocationPage';
 import { ThankYouPage } from './pages/ThankYouPage';
 import { ContactPage } from './pages/ContactPage';
+import { PackagesPage } from './pages/PackagesPage';
 
 // Login & Join Now Pages
 import { LoginPage } from './pages/LoginPage';
@@ -62,6 +63,7 @@ function App() {
             <Route path="/location" element={<LocationPage />} />
             <Route path="/thank-you" element={<ThankYouPage />} />
             <Route path="/contact" element={<ContactPage />} />
+            <Route path="/packages" element={<PackagesPage />} />
             
             {/* Login & Join Routes */}
             <Route path="/login" element={<LoginPage />} />

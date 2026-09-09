@@ -1,78 +1,80 @@
-import React from 'react';
-import { ArrowRight } from 'lucide-react';
-import hero1Img from '../assets/hero1.png';
+import React, { useEffect, useState } from 'react';
+import { ArrowRight, MapPin } from 'lucide-react';
+import { heroPoster, heroVideos } from '../data/resort';
 
 export const Hero: React.FC = () => {
-  return (
-    <section
-      id="home"
-      className="relative min-h-[85vh] lg:h-[calc(100vh-3.5rem)] flex flex-col justify-between pt-24 pb-20 sm:pt-26 sm:pb-24 lg:pt-26 lg:pb-24 overflow-hidden bg-[#071a12]"
-    >
-      
-      {/* Background Image using src/assets/hero1.png */}
-      <div className="absolute inset-0 z-0">
-        <img
-          src={hero1Img}
-          alt="Joy Club Resort Background"
-          className="w-full h-full object-cover object-center filter brightness-[0.6] contrast-[1.05]"
-        />
-        {/* Gradient overlays for readability */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-black/50" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#071a12]/90 via-[#071a12]/50 to-transparent" />
-        {/* Bottom smooth fade to section background color #f7f4ed */}
-        <div className="absolute bottom-0 left-0 right-0 h-36 bg-gradient-to-t from-[#f7f4ed] via-[#f7f4ed]/50 to-transparent" />
-      </div>
+  const [active, setActive] = useState(0);
 
-      {/* Main Hero Content Container */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full my-auto">
-        <div className="max-w-3xl space-y-4 sm:space-y-5">
-          
-          {/* Gold Subtitle Tag */}
-          <div className="inline-block">
-            <span className="text-[#cfa353] text-xs sm:text-sm font-semibold tracking-[0.25em] uppercase font-sans">
-              WELCOME TO JOY CLUB RESORT
+  useEffect(() => {
+    const timer = window.setInterval(() => {
+      setActive((current) => (current === 0 ? 1 : 0));
+    }, 14000);
+    return () => window.clearInterval(timer);
+  }, []);
+
+  return (
+    <section id="home" className="relative min-h-[100svh] overflow-hidden bg-[#1a140c]">
+      {heroVideos.map((src, index) => (
+        <video
+          key={src}
+          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
+            active === index ? 'opacity-100' : 'opacity-0'
+          }`}
+          src={src}
+          poster={heroPoster}
+          autoPlay
+          muted
+          loop
+          playsInline
+        />
+      ))}
+
+      <div className="absolute inset-0 bg-gradient-to-t from-[#1a140c]/55 via-transparent to-[#f6e7c4]/10" />
+      <div className="absolute inset-0 bg-gradient-to-r from-[#1a140c]/35 via-transparent to-transparent" />
+      <div className="absolute bottom-0 inset-x-0 h-36 bg-gradient-to-t from-[#f7f4ed] to-transparent" />
+
+      <p className="pointer-events-none select-none absolute -left-3 sm:left-0 top-16 sm:top-20 font-serif italic text-[#fff8e8]/15 text-[28vw] sm:text-[22vw] leading-none tracking-tight">
+        Joy
+      </p>
+
+      <div className="relative z-10 min-h-[100svh] max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col justify-end pb-36 sm:pb-40 pt-32">
+        <div className="max-w-3xl animate-rise">
+          <div className="flex items-center gap-3 mb-5">
+            <span className="h-px w-10 bg-[#cfa353]" />
+            <span className="inline-flex items-center gap-1.5 text-[#f4e6c0] text-[11px] sm:text-xs font-semibold tracking-[0.28em] uppercase">
+              <MapPin className="w-3.5 h-3.5 text-[#cfa353]" />
+              Sanskriti Village, Jaipur
             </span>
           </div>
 
-          {/* Luxury Serif Title */}
-          <h1 className="text-4xl sm:text-6xl md:text-7xl font-serif font-medium text-white tracking-tight leading-[1.08]">
-            Experience <br />
-            Nature. <br />
-            <span className="text-[#cfa353]">Embrace Luxury.</span>
+          <h1 className="font-serif text-[#fff8ec] text-5xl sm:text-7xl md:text-8xl font-medium leading-[0.95] tracking-tight drop-shadow-[0_8px_28px_rgba(43,26,12,0.35)]">
+            Their lake.
+            <br />
+            Their film.
           </h1>
 
-          {/* Subtext Paragraph */}
-          <p className="text-gray-200 text-sm sm:text-base md:text-lg max-w-xl font-sans leading-relaxed font-light">
-            A world-class adventure resort in Rajasthan where luxury, nature and
-            unforgettable experiences come together.
+          <p className="mt-6 max-w-lg text-[#f7eed8] text-sm sm:text-lg font-sans font-light leading-relaxed">
+            Original resort footage from joyadventureresort.com — Swiss cottages,
+            the zip line over water, and the grounds as they really look.
           </p>
 
-          {/* Action Buttons */}
-          <div className="flex flex-wrap items-center gap-4 pt-1">
+          <div className="mt-8 flex flex-wrap items-center gap-3.5">
             <a
-              href="#book"
-              className="px-8 py-3.5 rounded-xl bg-[#cfa353] hover:bg-[#b88e40] text-slate-950 font-bold text-xs sm:text-sm tracking-wider uppercase transition-all shadow-lg hover:shadow-xl hover:scale-105"
+              href="#stay"
+              className="px-7 sm:px-8 py-3.5 rounded-full bg-[#cfa353] hover:bg-[#e6bf73] text-[#1a140c] font-semibold text-xs sm:text-sm tracking-[0.16em] uppercase transition-all shadow-lg"
             >
-              BOOK NOW
+              Reserve a cottage
             </a>
             <a
-              href="#explore"
-              className="px-8 py-3.5 rounded-xl border border-white/30 bg-black/30 hover:bg-black/50 backdrop-blur-sm text-white font-semibold text-xs sm:text-sm tracking-wider uppercase transition-all flex items-center gap-2 group"
+              href="#film"
+              className="px-7 sm:px-8 py-3.5 rounded-full border border-[#fff8ec]/40 bg-[#fff8ec]/15 hover:bg-[#fff8ec]/28 backdrop-blur-md text-[#fff8ec] font-semibold text-xs sm:text-sm tracking-[0.16em] uppercase transition-all inline-flex items-center gap-2 group"
             >
-              <span>EXPLORE RESORT</span>
+              Watch the resort
               <ArrowRight className="w-4 h-4 text-[#cfa353] group-hover:translate-x-1 transition-transform" />
             </a>
           </div>
         </div>
       </div>
-
-      {/* Bottom Sub-Banner Subtitle (Safely un-obscured above cards overlap) */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full mt-6 mb-16 sm:mb-20 lg:mb-20">
-        <p className="text-[#cfa353] text-xs sm:text-sm tracking-[0.3em] uppercase font-sans font-semibold drop-shadow-md">
-          RELAX. REFRESH. RECONNECT.
-        </p>
-      </div>
-
     </section>
   );
 };

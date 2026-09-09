@@ -1,55 +1,9 @@
 import React, { useState } from 'react';
 import { ChevronLeft, ChevronRight, Star } from 'lucide-react';
 import { FaQuoteLeft } from 'react-icons/fa';
+import { testimonials } from '../data/resort';
 
 export const Testimonials: React.FC = () => {
-  const testimonials = [
-    {
-      id: 1,
-      quote:
-        'An absolutely stunning escape. The villas are spacious, the food was exceptional, and the adventure park kept our kids busy all weekend.',
-      name: 'Amit Sharma',
-      city: 'Jaipur',
-      avatar:
-        'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80',
-    },
-    {
-      id: 2,
-      quote:
-        'The naturopathy and yoga sessions at sunrise were transformative. I left feeling lighter, calmer and completely reconnected with nature.',
-      name: 'Priya Mehta',
-      city: 'Delhi',
-      avatar:
-        'https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=200&q=80',
-    },
-    {
-      id: 3,
-      quote:
-        'We hosted our wedding here and every single detail was perfect. The mandap under the fairy lights was pure magic for our families.',
-      name: 'Rahul & Ananya',
-      city: 'Udaipur',
-      avatar:
-        'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=200&q=80',
-    },
-    {
-      id: 4,
-      quote:
-        'Unmatched luxury surrounded by green hills. The spa treatment and infinity pool experience made our anniversary truly unforgettable.',
-      name: 'Vikram & Sunita',
-      city: 'Mumbai',
-      avatar:
-        'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80',
-    },
-    {
-      id: 5,
-      quote:
-        'Our corporate team building retreat was seamless. Outstanding conference facilities, thrilling ziplining, and gourmet Rajasthani dining.',
-      name: 'Rohan Verma',
-      city: 'Gurugram',
-      avatar:
-        'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80',
-    },
-  ];
 
   const [startIndex, setStartIndex] = useState(0);
 
@@ -81,7 +35,7 @@ export const Testimonials: React.FC = () => {
             TESTIMONIALS
           </span>
           <h2 className="text-3xl sm:text-5xl font-serif font-medium text-[#0a291c]">
-            Guest Experiences
+            Guests from the resort
           </h2>
         </div>
 
