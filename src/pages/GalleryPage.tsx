@@ -82,7 +82,7 @@ export const GalleryPage: React.FC = () => {
               {/* Styled Master Map Illustration Graphic */}
               <div className="relative rounded-2xl overflow-hidden shadow-2xl border-2 border-emerald-800/30">
                 <img
-                  src="/media/rooms/lake-aerial.jpg"
+                  src="/resort-media/rooms/lake-aerial.jpg"
                   alt="Master Site Layout Map"
                   className="w-full h-[420px] object-cover filter brightness-90"
                 />

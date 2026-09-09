@@ -8,21 +8,21 @@ export const WeddingsPage: React.FC = () => {
       tag: 'OUTDOOR MANDAP',
       capacity: 'Up to 1500 Guests',
       description: 'Sprawling green lawn surrounded by palm trees, fairy lights, and fairytale Aravalli backdrop for grand weddings.',
-      image: '/media/packages/wedding.jpg',
+      image: '/resort-media/packages/wedding.jpg',
     },
     {
       title: 'Lakeside Pool Deck & Lawn',
       tag: 'COCKTAIL & MEHENDI',
       capacity: 'Up to 500 Guests',
       description: 'Picturesque poolside venue ideal for haldi, mehendi, sunset cocktail parties, and musical sangeet nights.',
-      image: '/media/rooms/lake-cottage.jpg',
+      image: '/resort-media/rooms/lake-cottage.jpg',
     },
     {
       title: 'Grand Banquet & Conference Hall',
       tag: 'INDOOR RECEPTION',
       capacity: 'Up to 400 Guests',
       description: 'Climate-controlled luxury banquet hall with wooden paneling, crystal lighting, and state-of-the-art AV systems.',
-      image: '/media/packages/corporate.jpg',
+      image: '/resort-media/packages/corporate.jpg',
     },
   ];
 
@@ -41,7 +41,7 @@ export const WeddingsPage: React.FC = () => {
       {/* Hero Banner */}
       <section className="relative h-80 sm:h-96 flex items-center justify-center text-center text-white overflow-hidden">
         <img
-          src="/media/events/holi-1.jpg"
+          src="/resort-media/events/holi-1.jpg"
           alt="Destination Weddings Banner"
           className="absolute inset-0 w-full h-full object-cover filter brightness-[0.35]"
         />

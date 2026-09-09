@@ -17,7 +17,7 @@ export const WellnessSection: React.FC = () => {
           <div className="relative">
             <div className="rounded-[2rem] overflow-hidden h-[360px] sm:h-[500px] shadow-xl">
               <img
-                src="/media/resort/resort-02.jpg"
+                src="/resort-media/resort/resort-02.jpg"
                 alt="Quiet grounds at Joy Adventure Resort"
                 className="w-full h-full object-cover"
               />

@@ -117,7 +117,7 @@ export const ResortKeysPage: React.FC = () => {
             {/* 2. Middle Column: Nature & Luxury Sunset Gazebo Feature Card */}
             <div className="lg:col-span-4 relative rounded-3xl overflow-hidden shadow-xl border border-amber-900/10 min-h-[500px] flex flex-col justify-between p-6 group">
               <img
-                src="/media/resort/resort-01.jpg"
+                src="/resort-media/resort/resort-01.jpg"
                 alt="A Perfect Blend of Nature & Luxury"
                 className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 filter brightness-[0.75]"
               />
@@ -145,7 +145,7 @@ export const ResortKeysPage: React.FC = () => {
               
               <div className="relative h-44 rounded-2xl overflow-hidden shadow-md group">
                 <img
-                  src="/media/rooms/lake-aerial.jpg"
+                  src="/resort-media/rooms/lake-aerial.jpg"
                   alt="Lush Green Landscapes"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform"
                 />
@@ -156,7 +156,7 @@ export const ResortKeysPage: React.FC = () => {
 
               <div className="relative h-44 rounded-2xl overflow-hidden shadow-md group">
                 <img
-                  src="/media/gallery/g02.jpg"
+                  src="/resort-media/gallery/g02.jpg"
                   alt="Serene Lakes & Sunsets"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform"
                 />
@@ -167,7 +167,7 @@ export const ResortKeysPage: React.FC = () => {
 
               <div className="relative h-44 rounded-2xl overflow-hidden shadow-md group">
                 <img
-                  src="/media/rooms/garden-facing.jpg"
+                  src="/resort-media/rooms/garden-facing.jpg"
                   alt="Luxury Redefined"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform"
                 />

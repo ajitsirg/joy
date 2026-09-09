@@ -47,21 +47,21 @@ export const AboutSection: React.FC = () => {
           <div className="lg:col-span-7 relative h-[420px] sm:h-[520px]">
             <div className="absolute left-0 top-8 w-[58%] h-[78%] rounded-[2rem] overflow-hidden shadow-xl border-4 border-white rotate-[-2deg]">
               <img
-                src="/media/rooms/lake-aerial.jpg"
+                src="/resort-media/rooms/lake-aerial.jpg"
                 alt="Aerial of Joy Adventure Resort"
                 className="w-full h-full object-cover"
               />
             </div>
             <div className="absolute right-0 top-0 w-[46%] h-[46%] rounded-[1.6rem] overflow-hidden shadow-xl border-4 border-white rotate-[3deg]">
               <img
-                src="/media/rooms/garden-facing.jpg"
+                src="/resort-media/rooms/garden-facing.jpg"
                 alt="Garden facing Swiss cottage"
                 className="w-full h-full object-cover"
               />
             </div>
             <div className="absolute right-4 bottom-0 w-[48%] h-[42%] rounded-[1.6rem] overflow-hidden shadow-xl border-4 border-white rotate-[1deg]">
               <img
-                src="/media/resort/resort-01.jpg"
+                src="/resort-media/resort/resort-01.jpg"
                 alt="Joy Adventure Resort grounds"
                 className="w-full h-full object-cover"
               />

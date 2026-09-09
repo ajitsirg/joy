@@ -12,7 +12,7 @@ export const WeddingsCorporate: React.FC = () => {
             className="lg:col-span-7 relative h-[420px] sm:h-[500px] rounded-[2rem] overflow-hidden group"
           >
             <img
-              src="/media/packages/wedding.jpg"
+              src="/resort-media/packages/wedding.jpg"
               alt="Weddings at Joy Club"
               className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 brightness-[1.02]"
             />
@@ -35,7 +35,7 @@ export const WeddingsCorporate: React.FC = () => {
             className="lg:col-span-5 relative h-[420px] sm:h-[500px] rounded-[2rem] overflow-hidden group bg-[#0a291c]"
           >
             <img
-              src="/media/packages/corporate.jpg"
+              src="/resort-media/packages/corporate.jpg"
               alt="Corporate retreats"
               className="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700"
             />

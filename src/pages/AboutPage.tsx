@@ -38,23 +38,23 @@ export const AboutPage: React.FC = () => {
   const photoCollage = [
     {
       title: 'Serene Resort Lake Boating',
-      image: '/media/gallery/g01.jpg',
+      image: '/resort-media/gallery/g01.jpg',
     },
     {
       title: 'Traditional Wooden Villa',
-      image: '/media/rooms/lake-cottage.jpg',
+      image: '/resort-media/rooms/lake-cottage.jpg',
     },
     {
       title: 'Lush Orchard Lawns',
-      image: '/media/rooms/lake-aerial.jpg',
+      image: '/resort-media/rooms/lake-aerial.jpg',
     },
     {
       title: 'Luxury Bedroom Interior',
-      image: '/media/rooms/farmhouse.jpg',
+      image: '/resort-media/rooms/farmhouse.jpg',
     },
     {
       title: 'Sunset Lake Gazebo',
-      image: '/media/resort/resort-02.jpg',
+      image: '/resort-media/resort/resort-02.jpg',
     },
   ];
 
@@ -71,7 +71,7 @@ export const AboutPage: React.FC = () => {
             {/* 1. Left Card: Sunset Resort Pathway & Brand Tagline */}
             <div className="lg:col-span-4 relative h-[480px] sm:h-[540px] rounded-3xl overflow-hidden shadow-xl group border border-amber-900/10 flex flex-col justify-between p-6">
               <img
-                src="/media/gallery/g06.jpg"
+                src="/resort-media/gallery/g06.jpg"
                 alt="Joy Hospitality Pathway"
                 className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 filter brightness-[0.7]"
               />

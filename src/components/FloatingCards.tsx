@@ -7,28 +7,28 @@ const journeys = [
     title: 'Stay',
     line: 'Villas that open onto water and trees.',
     href: '#stay',
-    image: '/media/rooms/lake-cottage.jpg',
+    image: '/resort-media/rooms/lake-cottage.jpg',
   },
   {
     num: '02',
     title: 'Heal',
     line: 'Sunrise yoga, spa, and slow Ayurveda.',
     href: '#wellness',
-    image: '/media/resort/table.jpg',
+    image: '/resort-media/resort/table.jpg',
   },
   {
     num: '03',
     title: 'Play',
     line: 'Ziplines, ATVs, and lakeside camps.',
     href: '#adventure',
-    image: '/media/games/zipline.jpg',
+    image: '/resort-media/games/zipline.jpg',
   },
   {
     num: '04',
     title: 'Celebrate',
     line: 'Weddings and retreats under the hills.',
     href: '#weddings',
-    image: '/media/packages/wedding.jpg',
+    image: '/resort-media/packages/wedding.jpg',
   },
 ];
 
