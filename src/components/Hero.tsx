@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { ArrowRight, MapPin } from 'lucide-react';
+import { ArrowRight, MapPin, Play } from 'lucide-react';
 import { heroPoster, heroVideos } from '../data/resort';
 
 export const Hero: React.FC = () => {
@@ -13,65 +13,93 @@ export const Hero: React.FC = () => {
   }, []);
 
   return (
-    <section id="home" className="relative min-h-[100svh] overflow-hidden bg-[#1a140c]">
-      {heroVideos.map((src, index) => (
-        <video
-          key={src}
-          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
-            active === index ? 'opacity-100' : 'opacity-0'
-          }`}
-          src={src}
-          poster={heroPoster}
-          autoPlay
-          muted
-          loop
-          playsInline
-        />
-      ))}
+    <section id="home" className="relative overflow-hidden bg-white pt-24 sm:pt-28">
+      <div className="absolute right-0 top-0 h-72 w-72 sm:h-[32rem] sm:w-[32rem] rounded-full bg-[#edf4ee] blur-3xl" />
+      <div className="absolute left-0 bottom-0 h-64 w-64 rounded-full bg-[#fbf3df] blur-3xl" />
 
-      <div className="absolute inset-0 bg-gradient-to-t from-[#1a140c]/55 via-transparent to-[#f6e7c4]/10" />
-      <div className="absolute inset-0 bg-gradient-to-r from-[#1a140c]/35 via-transparent to-transparent" />
-      <div className="absolute bottom-0 inset-x-0 h-36 bg-gradient-to-t from-[#f7f4ed] to-transparent" />
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
+        <div className="grid grid-cols-1 lg:grid-cols-[0.92fr_1.08fr] gap-8 lg:gap-14 items-center">
+          <div className="order-2 lg:order-1 animate-rise">
+            <img
+              src="/brand/joy-hospitality-logo.png"
+              alt="Joy Hospitality and Real Estate Group"
+              className="w-48 sm:w-56 h-auto mb-7 rounded-xl"
+            />
 
-      <p className="pointer-events-none select-none absolute -left-3 sm:left-0 top-16 sm:top-20 font-serif italic text-[#fff8e8]/15 text-[28vw] sm:text-[22vw] leading-none tracking-tight">
-        Joy
-      </p>
+            <div className="flex items-center gap-3 mb-5">
+              <span className="h-px w-10 bg-[#cfa353]" />
+              <span className="inline-flex items-center gap-1.5 text-[#8d6d2f] text-[11px] sm:text-xs font-semibold tracking-[0.22em] uppercase">
+                <MapPin className="w-3.5 h-3.5 text-[#cfa353]" />
+                Sanskriti Village, Jaipur
+              </span>
+            </div>
 
-      <div className="relative z-10 min-h-[100svh] max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col justify-end pb-36 sm:pb-40 pt-32">
-        <div className="max-w-3xl animate-rise">
-          <div className="flex items-center gap-3 mb-5">
-            <span className="h-px w-10 bg-[#cfa353]" />
-            <span className="inline-flex items-center gap-1.5 text-[#f4e6c0] text-[11px] sm:text-xs font-semibold tracking-[0.28em] uppercase">
-              <MapPin className="w-3.5 h-3.5 text-[#cfa353]" />
-              Sanskriti Village, Jaipur
-            </span>
+            <h1 className="font-serif text-[#0a291c] text-5xl sm:text-6xl xl:text-7xl font-medium leading-[0.96] tracking-tight">
+              Where every stay
+              <br />
+              becomes a <span className="italic text-[#b88e40]">story.</span>
+            </h1>
+
+            <p className="mt-6 max-w-xl text-slate-600 text-sm sm:text-lg font-sans leading-relaxed">
+              Lake-view cottages, open-air adventures, farm-to-table dining and
+              celebrations designed around the joy of being together.
+            </p>
+
+            <div className="mt-8 flex flex-col sm:flex-row sm:items-center gap-3.5">
+              <a
+                href="#stay"
+                className="inline-flex justify-center items-center px-7 py-3.5 rounded-full bg-[#0a291c] hover:bg-[#164b34] text-white font-semibold text-xs sm:text-sm tracking-[0.14em] uppercase transition-all shadow-lg"
+              >
+                Explore stays
+              </a>
+              <a
+                href="#film"
+                className="inline-flex justify-center items-center gap-2 px-7 py-3.5 rounded-full border border-[#0a291c]/15 bg-white hover:border-[#cfa353] text-[#0a291c] font-semibold text-xs sm:text-sm tracking-[0.14em] uppercase transition-all"
+              >
+                <Play className="w-3.5 h-3.5 fill-[#cfa353] text-[#cfa353]" />
+                Watch our film
+              </a>
+            </div>
+
+            <div className="mt-10 grid grid-cols-3 max-w-md border-t border-[#0a291c]/10 pt-5">
+              {[
+                ['17+', 'games & rides'],
+                ['5', 'stay options'],
+                ['1', 'private lake'],
+              ].map(([value, label]) => (
+                <div key={label} className="border-r last:border-r-0 border-[#0a291c]/10 px-3 first:pl-0">
+                  <p className="font-serif text-3xl sm:text-4xl text-[#0a291c]">{value}</p>
+                  <p className="text-[10px] sm:text-[11px] text-slate-500 uppercase tracking-wide">{label}</p>
+                </div>
+              ))}
+            </div>
           </div>
 
-          <h1 className="font-serif text-[#fff8ec] text-5xl sm:text-7xl md:text-8xl font-medium leading-[0.95] tracking-tight drop-shadow-[0_8px_28px_rgba(43,26,12,0.35)]">
-            Their lake.
-            <br />
-            Their film.
-          </h1>
-
-          <p className="mt-6 max-w-lg text-[#f7eed8] text-sm sm:text-lg font-sans font-light leading-relaxed">
-            Original resort footage from joyadventureresort.com — Swiss cottages,
-            the zip line over water, and the grounds as they really look.
-          </p>
-
-          <div className="mt-8 flex flex-wrap items-center gap-3.5">
-            <a
-              href="#stay"
-              className="px-7 sm:px-8 py-3.5 rounded-full bg-[#cfa353] hover:bg-[#e6bf73] text-[#1a140c] font-semibold text-xs sm:text-sm tracking-[0.16em] uppercase transition-all shadow-lg"
-            >
-              Reserve a cottage
-            </a>
-            <a
-              href="#film"
-              className="px-7 sm:px-8 py-3.5 rounded-full border border-[#fff8ec]/40 bg-[#fff8ec]/15 hover:bg-[#fff8ec]/28 backdrop-blur-md text-[#fff8ec] font-semibold text-xs sm:text-sm tracking-[0.16em] uppercase transition-all inline-flex items-center gap-2 group"
-            >
-              Watch the resort
-              <ArrowRight className="w-4 h-4 text-[#cfa353] group-hover:translate-x-1 transition-transform" />
-            </a>
+          <div className="order-1 lg:order-2 relative min-h-[360px] sm:min-h-[500px] lg:min-h-[620px] rounded-[2rem] overflow-hidden shadow-[0_24px_70px_rgba(10,41,28,0.18)]">
+            {heroVideos.map((src, index) => (
+              <video
+                key={src}
+                className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
+                  active === index ? 'opacity-100' : 'opacity-0'
+                }`}
+                src={src}
+                poster={heroPoster}
+                autoPlay
+                muted
+                loop
+                playsInline
+              />
+            ))}
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0a291c]/65 via-transparent to-transparent" />
+            <div className="absolute left-5 right-5 bottom-5 sm:left-8 sm:right-8 sm:bottom-8 rounded-2xl bg-white/90 backdrop-blur-md px-5 py-4 flex items-center justify-between gap-4">
+              <div>
+                <p className="text-[10px] sm:text-[11px] tracking-[0.2em] uppercase text-[#b88e40] font-semibold">Joy Adventure Resort</p>
+                <p className="font-serif text-xl sm:text-2xl text-[#0a291c]">Tradition meets technology.</p>
+              </div>
+              <span className="hidden sm:flex shrink-0 w-10 h-10 rounded-full bg-[#0a291c] items-center justify-center">
+                <ArrowRight className="w-4 h-4 text-[#cfa353]" />
+              </span>
+            </div>
           </div>
         </div>
       </div>

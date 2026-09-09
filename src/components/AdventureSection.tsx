@@ -9,7 +9,7 @@ const featured = games.filter((game) =>
 
 export const AdventureSection: React.FC = () => {
   return (
-    <section id="adventure" className="bg-[#f3efe6] py-20 text-slate-800 overflow-hidden">
+    <section id="adventure" className="bg-white py-20 text-slate-800 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-12">
           <div className="max-w-xl space-y-3">

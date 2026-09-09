@@ -23,7 +23,7 @@ export const Testimonials: React.FC = () => {
   ];
 
   return (
-    <section className="bg-[#f7f4ed] py-20 text-slate-800">
+    <section className="bg-white py-20 text-slate-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}

@@ -8,7 +8,7 @@ export const VillasSection: React.FC = () => {
   const others = rooms.slice(1, 3);
 
   return (
-    <section id="stay" className="bg-[#fbf9f4] py-20">
+    <section id="stay" className="bg-white py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-12">
           <div>
