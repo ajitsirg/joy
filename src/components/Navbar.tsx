@@ -193,13 +193,13 @@ export const Navbar: React.FC = () => {
                 Login
               </Link>
 
-              <Link
-                to="/join"
+              <a
+                href="/account/register"
                 className="hidden sm:inline-flex items-center gap-1.5 px-5 py-2 rounded-full bg-[#cfa353] hover:bg-[#e6bf73] text-[#0a291c] font-sans text-[12px] font-semibold tracking-[0.12em] uppercase transition-all shadow-md"
               >
                 <UserPlus className="w-3.5 h-3.5" />
                 Join Now
-              </Link>
+              </a>
 
               <button
                 type="button"
@@ -319,12 +319,12 @@ export const Navbar: React.FC = () => {
           >
             Login
           </Link>
-          <Link
-            to="/join"
+          <a
+            href="/account/register"
             className="w-full py-3 rounded-full bg-[#cfa353] text-[#0a291c] font-sans text-[12px] font-semibold tracking-[0.14em] text-center block uppercase hover:bg-[#e6bf73] transition-colors"
           >
             Join Now
-          </Link>
+          </a>
         </div>
       </div>
     </>

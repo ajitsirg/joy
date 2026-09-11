@@ -1,10 +1,14 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ShieldCheck, ArrowRight, ArrowLeft, Check, Lock } from 'lucide-react';
 
 export const JoinPage: React.FC = () => {
   const [step, setStep] = useState<1 | 2 | 3>(1);
   const [showPassword, setShowPassword] = useState(false);
+
+  useEffect(() => {
+    window.location.replace(`/account/register${window.location.search}`);
+  }, []);
 
   // Form states
   const [leadReference, setLeadReference] = useState('');

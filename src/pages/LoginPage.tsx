@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import { User, Lock, Mail, Eye, EyeOff, Clock } from 'lucide-react';
 
 export const LoginPage: React.FC = () => {
@@ -201,9 +200,9 @@ export const LoginPage: React.FC = () => {
             <div className="text-center pt-2">
               <p className="text-xs text-slate-500">
                 New associate?{' '}
-                <Link to="/join" className="text-[#074d2b] font-bold hover:underline">
+                <a href="/account/register" className="text-[#074d2b] font-bold hover:underline">
                   Join now
-                </Link>
+                </a>
               </p>
             </div>
 
