@@ -10,6 +10,47 @@ export const LoginPage: React.FC = () => {
   const [associateUsername, setAssociateUsername] = useState('');
   const [staffEmail, setStaffEmail] = useState('admin@joyclub.associate');
   const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    setError('');
+
+    const identity = activeTab === 'associate' ? associateUsername.trim().toUpperCase() : staffEmail.trim().toLowerCase();
+    if (!identity || !password.trim()) {
+      setError(`Enter your ${activeTab === 'associate' ? 'username' : 'staff email'} and password.`);
+      return;
+    }
+
+    setIsSubmitting(true);
+    try {
+      const response = await fetch('/api/v1/auth/login/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(
+          activeTab === 'associate'
+            ? { username: identity, password: password.trim(), remember_me: true }
+            : { email: identity, password: password.trim(), remember_me: true },
+        ),
+      });
+      const result = await response.json().catch(() => ({}));
+      if (!response.ok || !result.access || !result.refresh) {
+        throw new Error(result.detail || 'Unable to sign in. Please check your details and try again.');
+      }
+
+      // The account portal uses this same origin-scoped token key.
+      localStorage.setItem('joyclub.tokens.v1', JSON.stringify({
+        access: result.access,
+        refresh: result.refresh,
+      }));
+      window.location.assign('/account/dashboard');
+    } catch (submitError) {
+      setError(submitError instanceof Error ? submitError.message : 'Unable to sign in. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
+  }
 
   return (
     <div className="pt-20 min-h-screen bg-[#074d2b] flex flex-col justify-between text-slate-900 selection:bg-[#cfa353]">
@@ -40,7 +81,10 @@ export const LoginPage: React.FC = () => {
           <div className="p-1 bg-[#eaf4ed] rounded-full flex items-center justify-between border border-emerald-900/10">
             <button
               type="button"
-              onClick={() => setActiveTab('associate')}
+              onClick={() => {
+                setActiveTab('associate');
+                setError('');
+              }}
               className={`flex-1 py-2.5 rounded-full text-xs font-bold transition-all flex items-center justify-center gap-2 ${
                 activeTab === 'associate'
                   ? 'bg-white text-[#074d2b] shadow-md'
@@ -53,7 +97,10 @@ export const LoginPage: React.FC = () => {
 
             <button
               type="button"
-              onClick={() => setActiveTab('staff')}
+              onClick={() => {
+                setActiveTab('staff');
+                setError('');
+              }}
               className={`flex-1 py-2.5 rounded-full text-xs font-bold transition-all flex items-center justify-center gap-2 ${
                 activeTab === 'staff'
                   ? 'bg-white text-[#074d2b] shadow-md'
@@ -66,7 +113,7 @@ export const LoginPage: React.FC = () => {
           </div>
 
           {/* Form Fields */}
-          <form onSubmit={(e) => e.preventDefault()} className="space-y-5 pt-2">
+          <form onSubmit={handleSubmit} className="space-y-5 pt-2">
             
             {activeTab === 'associate' ? (
               /* Associate Form */
@@ -79,6 +126,8 @@ export const LoginPage: React.FC = () => {
                     value={associateUsername}
                     onChange={(e) => setAssociateUsername(e.target.value)}
                     placeholder="Enter username"
+                    autoComplete="username"
+                    required
                     className="w-full pl-10 pr-4 py-3 rounded-xl bg-[#f8faf9] border border-gray-200 text-xs focus:outline-none focus:border-[#074d2b] focus:bg-white transition-colors"
                   />
                 </div>
@@ -94,6 +143,8 @@ export const LoginPage: React.FC = () => {
                     value={staffEmail}
                     onChange={(e) => setStaffEmail(e.target.value)}
                     placeholder="admin@joyclub.associate"
+                    autoComplete="email"
+                    required
                     className="w-full pl-10 pr-4 py-3 rounded-xl bg-[#f8faf9] border border-gray-200 text-xs focus:outline-none focus:border-[#074d2b] focus:bg-white transition-colors"
                   />
                 </div>
@@ -114,6 +165,8 @@ export const LoginPage: React.FC = () => {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   placeholder="........"
+                  autoComplete="current-password"
+                  required
                   className="w-full pl-10 pr-10 py-3 rounded-xl bg-[#f8faf9] border border-gray-200 text-xs focus:outline-none focus:border-[#074d2b] focus:bg-white transition-colors"
                 />
                 <button
@@ -126,12 +179,19 @@ export const LoginPage: React.FC = () => {
               </div>
             </div>
 
+            {error && (
+              <p className="rounded-xl border border-red-200 bg-red-50 px-3 py-2 text-xs font-medium text-red-700" role="alert">
+                {error}
+              </p>
+            )}
+
             {/* Submit Button */}
             <button
               type="submit"
+              disabled={isSubmitting}
               className="w-full py-3.5 rounded-xl bg-[#074d2b] hover:bg-[#05381f] text-white font-bold text-xs tracking-wider uppercase transition-all shadow-lg hover:shadow-xl mt-2"
             >
-              Sign in
+              {isSubmitting ? 'Signing in…' : 'Sign in'}
             </button>
 
             {/* Footer Link */}
