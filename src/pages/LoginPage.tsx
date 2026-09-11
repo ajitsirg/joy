@@ -58,7 +58,7 @@ export const LoginPage: React.FC = () => {
       <div className="pt-10 pb-8 text-center text-white space-y-3 px-4">
         <div className="w-16 h-16 rounded-full bg-white p-1.5 flex items-center justify-center mx-auto shadow-xl">
           <img
-            src="/brand/joy-hospitality-mark.png?v=20260911"
+            src="/brand/joy-hospitality-mark.png?v=20260911b"
             alt="Joy Hospitality and Real Estate Group"
             className="h-full w-full object-contain"
           />
