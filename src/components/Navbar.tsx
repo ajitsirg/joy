@@ -93,7 +93,7 @@ export const Navbar: React.FC = () => {
             <Link to="/" className="flex items-center gap-3 group shrink-0">
               <div className="w-11 h-11 rounded-full overflow-hidden border border-[#cfa353]/80 bg-white flex items-center justify-center shadow-md group-hover:border-[#e6bf73] group-hover:scale-[1.03] transition-all">
                 <img
-                  src="/brand/joy-hospitality-logo.png"
+                  src="/brand/joy-hospitality-logo.png?v=20260911"
                   alt="Joy Hospitality and Real Estate Group"
                   className="w-full h-full object-contain p-0.5"
                 />
@@ -230,7 +230,7 @@ export const Navbar: React.FC = () => {
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-full overflow-hidden border border-[#cfa353] bg-white flex items-center justify-center">
               <img
-                src="/brand/joy-hospitality-logo.png"
+                src="/brand/joy-hospitality-logo.png?v=20260911"
                 alt="Joy Hospitality and Real Estate Group"
                 className="w-full h-full object-contain p-0.5"
               />

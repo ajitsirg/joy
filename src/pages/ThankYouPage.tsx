@@ -36,7 +36,7 @@ export const ThankYouPage: React.FC = () => {
               <div className="flex items-center justify-center sm:justify-start gap-3">
                 <div className="w-14 h-14 rounded-2xl bg-white border-2 border-[#cfa353] flex items-center justify-center p-1.5 shadow-lg shrink-0">
                   <img
-                    src="/brand/joy-hospitality-logo.png"
+                    src="/brand/joy-hospitality-logo.png?v=20260911"
                     alt="Joy Hospitality and Real Estate Group"
                     className="h-full w-full object-contain"
                   />
