@@ -57,9 +57,12 @@ export const LoginPage: React.FC = () => {
       
       {/* Top Brand Banner */}
       <div className="pt-10 pb-8 text-center text-white space-y-3 px-4">
-        {/* Foot Logo */}
-        <div className="w-14 h-14 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center mx-auto shadow-xl">
-          <span className="text-3xl">👣</span>
+        <div className="w-16 h-16 rounded-full bg-white p-1.5 flex items-center justify-center mx-auto shadow-xl">
+          <img
+            src="/brand/joy-hospitality-logo.png"
+            alt="Joy Hospitality and Real Estate Group"
+            className="h-full w-full object-contain"
+          />
         </div>
 
         <div className="space-y-1">
