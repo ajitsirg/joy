@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Palmtree } from 'lucide-react';
 import { FaFacebookF, FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
 
 export const Footer: React.FC = () => {
@@ -14,8 +13,12 @@ export const Footer: React.FC = () => {
           {/* Column 1: Brand & Slogan */}
           <div className="lg:col-span-4 space-y-4">
             <Link to="/" className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-full border-2 border-[#cfa353] bg-[#0a291c] flex items-center justify-center">
-                <Palmtree className="w-5 h-5 text-[#cfa353]" />
+              <div className="w-10 h-10 rounded-full border-2 border-[#cfa353] bg-white p-1 flex items-center justify-center">
+                <img
+                  src="/brand/joy-hospitality-mark.png?v=20260911b"
+                  alt="Joy Hospitality and Real Estate Group"
+                  className="h-full w-full object-contain"
+                />
               </div>
               <div className="flex flex-col">
                 <span className="text-white font-serif font-bold text-lg leading-none tracking-wider">
