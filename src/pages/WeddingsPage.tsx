@@ -110,7 +110,7 @@ export const WeddingsPage: React.FC = () => {
 
               <div className="p-6 pt-0">
                 <a
-                  href="#book-wedding"
+                  href="/contact?interest=wedding"
                   className="w-full py-3 rounded-xl bg-[#0d3423] hover:bg-[#071a12] text-white font-bold text-xs tracking-wider uppercase transition-colors flex items-center justify-center gap-2 shadow-md"
                 >
                   <span>INQUIRE FOR WEDDING</span>
@@ -134,7 +134,7 @@ export const WeddingsPage: React.FC = () => {
           </div>
           <div className="lg:col-span-5 text-left lg:text-right">
             <a
-              href="#book-corporate"
+              href="/contact?interest=corporate"
               className="inline-block px-8 py-3.5 rounded-full bg-[#cfa353] hover:bg-[#b88e40] text-slate-950 font-bold text-xs tracking-wider uppercase transition-all shadow-lg hover:scale-105"
             >
               EXPLORE CORPORATE PACKAGES

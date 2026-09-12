@@ -288,7 +288,7 @@ export const AboutPage: React.FC = () => {
 
             <div>
               <a
-                href="#join"
+                href="/account/register"
                 className="px-6 py-2.5 rounded-full bg-[#cfa353] hover:bg-[#b88e40] text-slate-950 font-bold text-xs uppercase tracking-wider transition-all shadow-md inline-block"
               >
                 TOGETHER, LET'S BUILD A BETTER TOMORROW

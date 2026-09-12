@@ -1,7 +1,36 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { MapPin, Phone, Mail, Building, Send, Heart, Award, Users, TrendingUp, Shield } from 'lucide-react';
 
 export const ContactPage: React.FC = () => {
+  const interest = new URLSearchParams(window.location.search).get('interest');
+  const [form, setForm] = useState({
+    name: '',
+    phone: '',
+    email: '',
+    inquiryType:
+      interest === 'wedding' || interest === 'corporate'
+        ? 'Theme Wedding / Birthday / Corporate'
+        : interest === 'stay'
+          ? 'Swiss Cottage / Farmhouse Stay'
+          : 'Swiss Cottage / Farmhouse Stay',
+    message: '',
+  });
+
+  const submitInquiry = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const subject = `Joy Club inquiry: ${form.inquiryType}`;
+    const body = [
+      `Name: ${form.name}`,
+      `Phone: ${form.phone}`,
+      `Email: ${form.email}`,
+      `Inquiry type: ${form.inquiryType}`,
+      '',
+      'Requirements:',
+      form.message,
+    ].join('\n');
+    window.location.href = `mailto:info@joyadventureresort.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  };
+
   const coreValues = [
     { title: 'TRUST', desc: 'Built on honesty and transparency', icon: <Shield className="w-5 h-5 text-[#cfa353]" /> },
     { title: 'QUALITY', desc: 'Committed to excellence in every experience', icon: <Award className="w-5 h-5 text-[#cfa353]" /> },
@@ -113,26 +142,26 @@ export const ContactPage: React.FC = () => {
                 <h3 className="text-2xl font-serif font-bold text-[#0a291c]">Booking & General Inquiry</h3>
               </div>
 
-              <form onSubmit={(e) => e.preventDefault()} className="space-y-4">
+              <form onSubmit={submitInquiry} className="space-y-4">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label className="text-xs font-bold text-slate-700 block mb-1">Your Full Name</label>
-                    <input type="text" placeholder="Enter name" className="w-full px-4 py-3 rounded-xl bg-white border border-gray-200 text-xs focus:outline-none focus:border-[#cfa353]" />
+                    <input type="text" value={form.name} onChange={(event) => setForm({ ...form, name: event.target.value })} placeholder="Enter name" required className="w-full px-4 py-3 rounded-xl bg-white border border-gray-200 text-xs focus:outline-none focus:border-[#cfa353]" />
                   </div>
                   <div>
                     <label className="text-xs font-bold text-slate-700 block mb-1">Phone Number</label>
-                    <input type="tel" placeholder="+91 98765 43210" className="w-full px-4 py-3 rounded-xl bg-white border border-gray-200 text-xs focus:outline-none focus:border-[#cfa353]" />
+                    <input type="tel" value={form.phone} onChange={(event) => setForm({ ...form, phone: event.target.value })} placeholder="+91 98765 43210" required className="w-full px-4 py-3 rounded-xl bg-white border border-gray-200 text-xs focus:outline-none focus:border-[#cfa353]" />
                   </div>
                 </div>
 
                 <div>
                   <label className="text-xs font-bold text-slate-700 block mb-1">Email Address</label>
-                  <input type="email" placeholder="name@example.com" className="w-full px-4 py-3 rounded-xl bg-white border border-gray-200 text-xs focus:outline-none focus:border-[#cfa353]" />
+                  <input type="email" value={form.email} onChange={(event) => setForm({ ...form, email: event.target.value })} placeholder="name@example.com" required className="w-full px-4 py-3 rounded-xl bg-white border border-gray-200 text-xs focus:outline-none focus:border-[#cfa353]" />
                 </div>
 
                 <div>
                   <label className="text-xs font-bold text-slate-700 block mb-1">Inquiry Type</label>
-                  <select className="w-full px-4 py-3 rounded-xl bg-white border border-gray-200 text-xs focus:outline-none focus:border-[#cfa353]">
+                  <select value={form.inquiryType} onChange={(event) => setForm({ ...form, inquiryType: event.target.value })} className="w-full px-4 py-3 rounded-xl bg-white border border-gray-200 text-xs focus:outline-none focus:border-[#cfa353]">
                     <option>Swiss Cottage / Farmhouse Stay</option>
                     <option>Day Outing Package</option>
                     <option>Night Outing / Adventure Tents</option>
@@ -143,7 +172,7 @@ export const ContactPage: React.FC = () => {
 
                 <div>
                   <label className="text-xs font-bold text-slate-700 block mb-1">Message</label>
-                  <textarea rows={3} placeholder="Tell us your requirements..." className="w-full px-4 py-3 rounded-xl bg-white border border-gray-200 text-xs focus:outline-none focus:border-[#cfa353]" />
+                  <textarea rows={3} value={form.message} onChange={(event) => setForm({ ...form, message: event.target.value })} placeholder="Tell us your requirements..." required className="w-full px-4 py-3 rounded-xl bg-white border border-gray-200 text-xs focus:outline-none focus:border-[#cfa353]" />
                 </div>
 
                 <button type="submit" className="w-full py-3.5 rounded-xl bg-[#0a291c] hover:bg-[#071a12] text-white font-bold text-xs tracking-wider uppercase transition-all shadow-lg flex items-center justify-center gap-2">

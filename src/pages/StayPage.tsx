@@ -139,7 +139,7 @@ export const StayPage: React.FC = () => {
               {/* Booking CTA Button */}
               <div>
                 <a
-                  href="#book-stay"
+                  href="/contact?interest=stay"
                   className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-8 py-3.5 rounded-xl bg-[#0d3423] hover:bg-[#071a12] text-white font-bold text-xs tracking-wider uppercase transition-all shadow-lg hover:scale-105"
                 >
                   <Calendar className="w-4 h-4 text-[#cfa353]" />
